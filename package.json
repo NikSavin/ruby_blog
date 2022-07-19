@@ -1,0 +1,8 @@
+{
+  "name": "blog",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "webpack-dev-server": "^4.9.3"
+  }
+}
