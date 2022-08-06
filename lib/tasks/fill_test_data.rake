@@ -9,5 +9,5 @@ namespace :fill_test_data do
   	comment = Comment.create! body: 'test_comment', user: user, post: post
   	# Задаем оценку
   	Mark.create! value: 3, user: user, post: post
-
+  end
 end
