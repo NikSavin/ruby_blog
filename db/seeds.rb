@@ -12,13 +12,17 @@ Post.destroy_all
 Comment.destroy_all
 
 hash_users = 10.times.map do
+  email = FFaker::Internet.safe_email
+  
   {
-  	name: FFaker::Internet.user_name,
-  	email: FFaker::Internet.safe_email
+  	name: FFaker::Internet.user_name[0...16],
+    email: email,
+    password: email
   }
 end
 
 users = User.create!(hash_users)
+
 users.first(5).each { |u| u.update(creater: true) }
 users.first(3).each { |u| u.update(moderator: true) }
 

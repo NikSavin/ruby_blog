@@ -1,0 +1,14 @@
+header
+  = link_to 'Ru ', { locale: :ru}
+  = link_to 'En', { locale: :en}
+  ul
+    - if user_signed_in?
+	  li
+	    span = t('label.hello') % current_user.name
+	  li
+		= link_to t('label.logout'), destroy_user_session_path, method: :delete
+    - else
+	  li
+	    = link_to t('label.login'), new_user_session_path
+	  li
+	    = link_to t('label.registeration'), new_user_registration_path
